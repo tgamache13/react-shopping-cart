@@ -8,10 +8,11 @@ import { CartContext } from './contexts/CartContext';
 import Navigation from './components/Navigation';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
+import useLocalStorage from './components/useLocalStorage';
 
 function App() {
 	const [products] = useState(data);
-	const [cart, setCart] = useState([]);
+	const [cart, setCart] = useLocalStorage('cart', []);
 
 	const addItem = item => {
 	// add the given item to the cart
